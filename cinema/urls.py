@@ -6,12 +6,12 @@ from cinema.views import (MovieViewSet,
                           CinemaHallViewSet, ActorList, ActorDetail)
 
 router = routers.DefaultRouter()
-router.register("movies", MovieViewSet)
+router.register("movie", MovieViewSet)
 
 cinema_hall_list = CinemaHallViewSet.as_view(
     actions={
         "get": "list",
-        "post": "create"
+        "post": "create",
     }
 )
 
@@ -26,23 +26,23 @@ cinema_hall_detail = CinemaHallViewSet.as_view(
 urlpatterns = [
     path("",
          include(router.urls)),
-    path("genres/",
+    path("genre/",
          GenreList.as_view(),
          name="genre_list"),
-    path("genres/<int:pk>/",
+    path("genre/<int:pk>/",
          GenreDetail.as_view(),
          name="genre-detail"),
-    path("cinema-hall/",
+    path("cinema_hall/",
          cinema_hall_list,
          name="cinema_hall_list"),
-    path("cinema-hall/<int:pk>/",
+    path("cinema_hall/<int:pk>/",
          cinema_hall_detail,
          name="cinema_hall_detail"),
-    path("actors/",
+    path("actor/",
          ActorList.as_view(),
          name="actor_list"),
 
-    path("actors/<int:pk>/",
+    path("actor/<int:pk>/",
          ActorDetail.as_view(),
          name="actor-detail")
 ]
