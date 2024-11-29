@@ -32,7 +32,7 @@ urlpatterns = [
     path("genres/<int:pk>/",
          GenreDetail.as_view(),
          name="genre-detail"),
-    path("cinema-hall",
+    path("cinema-hall/",
          cinema_hall_list,
          name="cinema_hall_list"),
     path("cinema-hall/<int:pk>/",
