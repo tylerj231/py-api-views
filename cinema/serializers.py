@@ -93,7 +93,7 @@ class CinemaHallSerializer(serializers.Serializer):
             instance.name)
 
         instance.rows = validated_data.get(
-            "row",
+            "rows",
             instance.rows)
 
         instance.seats_in_row = validated_data.get(
