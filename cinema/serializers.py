@@ -77,9 +77,6 @@ class MovieSerializer(serializers.Serializer):
 
         return instance
 
-
-
-
 class CinemaHallSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     name = serializers.CharField(max_length=255)
